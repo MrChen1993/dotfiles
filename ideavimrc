@@ -1,0 +1,8 @@
+set number
+set relativenumber
+
+inoremap jj <Esc>
+inoremap <C-A> <Home>
+inoremap <A-E> <End>
+inoremap <C-F> <Right>
+inoremap <C-B> <Left>
