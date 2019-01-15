@@ -1,0 +1,16 @@
+#!/bin/bash
+
+case $1 in
+show)
+defaults write com.apple.finder AppleShowAllFiles -bool true
+killall Finder
+;;
+hide)
+defaults write com.apple.finder AppleShowAllFiles -bool false
+killall Finder
+;;
+*)
+echo "Usage: show|hide"
+;;
+esac
+exit 0
