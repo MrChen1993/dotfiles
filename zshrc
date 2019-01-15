@@ -3,6 +3,7 @@ ZSH_THEME="robbyrussell"
 DEFAULT_USER="chenlong"
 plugins=(
   git
+  brew
   autojump
   colored-man-pages
   zsh-syntax-highlighting
