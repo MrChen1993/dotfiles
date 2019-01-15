@@ -17,15 +17,15 @@ alias grep='grep --color=auto'
 #Colorful for Terminal
 # 不加判断,加快执行速度
 
-alias ls='gls --color=auto'
-alias dir='gdir --color=auto'
-alias grep='gdir --color=auto'
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias grep='dir --color=auto'
 
 alias grep='grep --color'
 alias egrep='egrep --color'
 alias fgrep='fgrep --color'
 
-eval $(gdircolors ~/opensource/dircolors-solarized/dircolors.ansi-dark)
+eval $(dircolors ~/opensource/dircolors-solarized/dircolors.ansi-dark)
 
 alias ping="ping -c 5"
 alias tree="tree -N"
