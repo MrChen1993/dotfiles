@@ -49,3 +49,6 @@ export PATH=$PATH:$JAVA_HOME/bin
 export ANACONDA_HOME=/opt/anaconda3
 source $ANACONDA_HOME/etc/profile.d/conda.sh
 export PATH=$PATH:$ANACONDA_HOME/bin
+
+export SPARK_HOME=/opt/spark/default
+export PATH=$PATH:$SPARK_HOME/bin
