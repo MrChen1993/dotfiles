@@ -8,6 +8,7 @@ plugins=(
   colored-man-pages
   zsh-syntax-highlighting
   extract
+  sudo
 )
 source $ZSH/oh-my-zsh.sh
 source ~/.customerc
