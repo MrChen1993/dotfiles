@@ -41,3 +41,11 @@ export PYSPARK_DRIVER_PYTHON_OPTS='notebook'
 
 ##Linux版本
 screenfetch
+
+export JAVA_HOME=/opt/jdk/default
+export CLASSPATH=.:$JAVA_HOME/lib
+export PATH=$PATH:$JAVA_HOME/bin
+
+export ANACONDA_HOME=/opt/anaconda3
+source $ANACONDA_HOME/etc/profile.d/conda.sh
+export PATH=$PATH:$ANACONDA_HOME/bin
