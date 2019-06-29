@@ -9,6 +9,7 @@ plugins=(
   zsh-syntax-highlighting
   extract
   sudo
+  zsh-autosuggestions
 )
 source $ZSH/oh-my-zsh.sh
 source ~/.customerc
