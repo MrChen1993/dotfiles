@@ -38,20 +38,18 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 
 #MacOS专用脚本
 #Setting for Java
-export JAVA_7_HOME=`/usr/libexec/java_home -v 1.7`
 export JAVA_8_HOME=`/usr/libexec/java_home -v 1.8`
-export JAVA_9_HOME=`/usr/libexec/java_home -v 9`
-export JAVA_10_HOME=`/usr/libexec/java_home -v 10`
-export JAVA_11_HOME=`/usr/libexec/java_home -v 11`
-export JAVA_12_HOME=`/usr/libexec/java_home -v 12`
+export JAVA_11_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.7.jdk/Contents/Home"
+export JAVA_14_HOME=`/usr/libexec/java_home -v 14`
+export GRAALVM_HOME="/Library/Java/JavaVirtualMachines/graalvm-ce-java11-20.3.0/Contents/Home"
+export OPENJDK_HOME="/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home"
 
-export JAVA_HOME=$JAVA_12_HOME
-alias jdk7="export JAVA_HOME=${JAVA_7_HOME}"
+export JAVA_HOME=$JAVA_14_HOME
 alias jdk8="export JAVA_HOME=${JAVA_8_HOME}"
-alias jdk9="export JAVA_HOME=${JAVA_9_HOME}"
-alias jdk10="export JAVA_HOME=${JAVA_10_HOME}"
 alias jdk11="export JAVA_HOME=${JAVA_11_HOME}"
-alias jdk12="export JAVA_HOME=${JAVA_12_HOME}"
+alias jdk14="export JAVA_HOME=${JAVA_14_HOME}"
+alias graalvm="export JAVA_HOME=${GRAALVM_HOME}"
+alias openjdk="export JAVA_HOME=${OPENJDK_HOME}"
 
 export QT_HOME="/Users/chenlong/Qt5.9.1/5.9.1/clang_64"
 export PATH="${QT_HOME}/bin:${PATH}"
@@ -60,6 +58,14 @@ export PATH=$PATH:/usr/local/sbin
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 export BXSHARE=/usr/local/Cellar/bochs/2.6.9_2/share/bochs
 
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+export FLUTTER_HOME=/opt/flutter
+export PATH=$PATH:$FLUTTER_HOME/bin
+
 temp(){
   cd `mktemp -d`
  }
+
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
+
