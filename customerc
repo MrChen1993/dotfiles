@@ -1,7 +1,4 @@
-#!/bin/bash
-
-###通用脚本,Linux MacOS通用
-#!/bin/bash
+#!/bin/zsh
 
 #Add myscript path to PATH
 export PATH="${PATH}:/usr/local/scripts"
@@ -39,20 +36,13 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 #MacOS专用脚本
 #Setting for Java
 export JAVA_8_HOME=`/usr/libexec/java_home -v 1.8`
-export JAVA_11_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.7.jdk/Contents/Home"
-export JAVA_14_HOME=`/usr/libexec/java_home -v 14`
-export GRAALVM_HOME="/Library/Java/JavaVirtualMachines/graalvm-ce-java11-20.3.0/Contents/Home"
-export OPENJDK_HOME="/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home"
+export JAVA_11_HOME=`/usr/libexec/java_home -v 11`
+export JAVA_16_HOME=`/usr/libexec/java_home -v 16`
 
-export JAVA_HOME=$JAVA_14_HOME
-alias jdk8="export JAVA_HOME=${JAVA_8_HOME}"
+export JAVA_HOME=$JAVA_11_HOME
+alias jdk8="export JAVA_HOME='${JAVA_8_HOME}'"
 alias jdk11="export JAVA_HOME=${JAVA_11_HOME}"
-alias jdk14="export JAVA_HOME=${JAVA_14_HOME}"
-alias graalvm="export JAVA_HOME=${GRAALVM_HOME}"
-alias openjdk="export JAVA_HOME=${OPENJDK_HOME}"
-
-export QT_HOME="/Users/chenlong/Qt5.9.1/5.9.1/clang_64"
-export PATH="${QT_HOME}/bin:${PATH}"
+alias jdk16="export JAVA_HOME=${JAVA_16_HOME}"
 
 export PATH=$PATH:/usr/local/sbin
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
@@ -67,5 +57,12 @@ temp(){
   cd `mktemp -d`
  }
 
+export HOMEBREW_NO_AUTO_UPDATE=true
+
+
+export ES_JAVA_HOME=$JAVA_11_HOME
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
 
+
+export PATH=/usr/local/soft/istio-1.10.3/bin:$PATH
+source ~/.customerc.local
