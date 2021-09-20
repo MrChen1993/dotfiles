@@ -40,7 +40,7 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 export PYSPARK_DRIVER_PYTHON=jupyter
 export PYSPARK_DRIVER_PYTHON_OPTS='notebook'
 
-screenfetch
+#screenfetch
 source ~/.customerc.local
 
 ##Linux版本
