@@ -3,8 +3,6 @@
 #Add myscript path to PATH
 export PATH="${PATH}:/usr/local/scripts"
 
-#export ALL_PROXY=socks5://127.0.0.1:1086
-
 alias cls='clear'
 alias ll='ls -l'
 alias la='ls -a'
@@ -27,42 +25,36 @@ eval $(gdircolors ~/opensource/dircolors-solarized/dircolors.ansi-dark)
 alias ping="ping -c 5"
 alias tree="tree -N"
 
-#alias for cnpm
-alias cnpm="npm --registry=https://registry.npm.taobao.org \
-  --cache=$HOME/.npm/.cache/cnpm \
-  --disturl=https://npm.taobao.org/dist \
-  --userconfig=$HOME/.cnpmrc"
-
 #MacOS专用脚本
 #Setting for Java
 export JAVA_8_HOME=`/usr/libexec/java_home -v 1.8`
-export JAVA_11_HOME=`/usr/libexec/java_home -v 11`
-export JAVA_16_HOME=`/usr/libexec/java_home -v 16`
+export JAVA_17_HOME=`/usr/libexec/java_home -v 17`
+export JAVA_19_HOME=`/usr/libexec/java_home -v 19`
 
-export JAVA_HOME=$JAVA_11_HOME
+export JAVA_HOME=$JAVA_17_HOME
 alias jdk8="export JAVA_HOME='${JAVA_8_HOME}'"
-alias jdk11="export JAVA_HOME=${JAVA_11_HOME}"
-alias jdk16="export JAVA_HOME=${JAVA_16_HOME}"
+alias jdk17="export JAVA_HOME=${JAVA_17_HOME}"
+alias jdk19="export JAVA_HOME=${JAVA_19_HOME}"
 
 export PATH=$PATH:/usr/local/sbin
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 export BXSHARE=/usr/local/Cellar/bochs/2.6.9_2/share/bochs
 
-export PUB_HOSTED_URL=https://pub.flutter-io.cn
-export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
-export FLUTTER_HOME=/opt/flutter
-export PATH=$PATH:$FLUTTER_HOME/bin
 
 temp(){
   cd `mktemp -d`
  }
 
-export HOMEBREW_NO_AUTO_UPDATE=true
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+}
 
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
 
-export ES_JAVA_HOME=$JAVA_11_HOME
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
-
-
-export PATH=/usr/local/soft/istio-1.10.3/bin:$PATH
 source ~/.customerc.local
+
