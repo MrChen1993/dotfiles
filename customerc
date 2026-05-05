@@ -20,21 +20,19 @@ alias grep='grep --color'
 alias egrep='egrep --color'
 alias fgrep='fgrep --color'
 
-eval $(gdircolors ~/opensource/dircolors-solarized/dircolors.ansi-dark)
+eval $(gdircolors ~/local/opensource/dircolors-solarized/dircolors.ansi-dark)
 
 alias ping="ping -c 5"
 alias tree="tree -N"
 
 #MacOS专用脚本
 #Setting for Java
-export JAVA_8_HOME=`/usr/libexec/java_home -v 1.8`
 export JAVA_17_HOME=`/usr/libexec/java_home -v 17`
-export JAVA_19_HOME=`/usr/libexec/java_home -v 19`
+export JAVA_26_HOME=`/usr/libexec/java_home -v 26`
 
-export JAVA_HOME=$JAVA_17_HOME
-alias jdk8="export JAVA_HOME='${JAVA_8_HOME}'"
+export JAVA_HOME=$JAVA_26_HOME
 alias jdk17="export JAVA_HOME=${JAVA_17_HOME}"
-alias jdk19="export JAVA_HOME=${JAVA_19_HOME}"
+alias jdk26="export JAVA_HOME=${JAVA_26_HOME}"
 
 export PATH=$PATH:/usr/local/sbin
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
@@ -55,6 +53,32 @@ pastefinish() {
 }
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
+
+
+eval "$(/usr/local/bin/brew shellenv zsh)"
+
+# fnm
+eval "$(fnm env --shell zsh)"
+
+proxy() {
+  export http_proxy=http://127.0.0.1:7890
+  export https_proxy=http://127.0.0.1:7890
+  export all_proxy=http://127.0.0.1:7890
+  git config --global http.proxy http://127.0.0.1:7890
+  git config --global https.proxy http://127.0.0.1:7890
+  echo "Proxy enabled: http://127.0.0.1:7890"
+}
+
+unproxy() {
+  unset http_proxy https_proxy all_proxy
+  git config --global --unset http.proxy
+  git config --global --unset https.proxy
+  echo "Proxy disabled"
+}
+
+# Maven
+export MAVEN_HOME=/Users/chenlong/local/maven-3.9.9
+export PATH=$MAVEN_HOME/bin:$PATH
 
 source ~/.customerc.local
 
