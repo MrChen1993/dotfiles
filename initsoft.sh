@@ -17,26 +17,15 @@ brew cask install mat #mat
 brew cask install typora #typora
 brew cask install visual-studio-code #visual studio code
 brew cask install intellij-idea #idea
-brew cask install clion #clion 
-brew cask install android-studio #android-sstudio
-brew cask install appcode #app code
-brew cask install amethyst #amethyst
 brew cask install iterm2 #iterm2
-brew cask install hex-fiend #hexfiend
-brew cask install teamviewer #teamviewer
 brew cask install anaconda #anaconda
 brew cask install docker #docker
 
 #安装常用命令行工具
 brew install coreutils #linux核心包
-brew install node #node
 brew install gradle #gradle
 brew install autojump #autojump
-brew install cmake #cmake
 brew install tmux #tmux
-
-#node命令
-npm install hexo-cli -g
 
 mkdir -p ~/gitrepo
 cd ~/gitrepo
