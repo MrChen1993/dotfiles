@@ -20,14 +20,7 @@ brew cask install intellij-idea #idea
 brew cask install clion #clion 
 brew cask install android-studio #android-sstudio
 brew cask install appcode #app code
-#emacs
-brew remove emacs
-brew tap railwaycat/emacsmacport
-brew cask install emacs-mac-spacemacs-icon
-
-brew cask install macvim #macvim
 brew cask install amethyst #amethyst
-brew cask install iina #iina
 brew cask install iterm2 #iterm2
 brew cask install hex-fiend #hexfiend
 brew cask install teamviewer #teamviewer
@@ -37,18 +30,10 @@ brew cask install docker #docker
 #安装常用命令行工具
 brew install coreutils #linux核心包
 brew install node #node
-brew install yarn #yarn
 brew install gradle #gradle
-brew install maven #maven
 brew install autojump #autojump
 brew install cmake #cmake
-brew install mysql #mysql
 brew install tmux #tmux
-brew install redis #reids
-brew install mongodb #mongodb
-brew install boost #boost
-brew install vert.x #vertx
-brew install kotlin #kotlin
 
 #node命令
 npm install hexo-cli -g
