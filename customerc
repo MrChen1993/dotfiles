@@ -1,8 +1,5 @@
 #!/bin/zsh
 
-#Add myscript path to PATH
-export PATH="${PATH}:/usr/local/scripts"
-
 alias cls='clear'
 alias ll='ls -l'
 alias la='ls -a'
@@ -26,25 +23,11 @@ alias ping="ping -c 5"
 alias tree="tree -N"
 
 
-export PATH=$PATH:/usr/local/sbin
-[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
-export BXSHARE=/usr/local/Cellar/bochs/2.6.9_2/share/bochs
 
 
 temp(){
   cd `mktemp -d`
  }
-
-pasteinit() {
-  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
-  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
-}
-
-pastefinish() {
-  zle -N self-insert $OLD_SELF_INSERT
-}
-zstyle :bracketed-paste-magic paste-init pasteinit
-zstyle :bracketed-paste-magic paste-finish pastefinish
 
 
 eval "$(brew shellenv zsh)"
@@ -87,4 +70,8 @@ rewrite-claude-to-glm() {
 
 # 将该函数注册为一个 ZLE 小部件 (Widget)
 zle -N accept-line rewrite-claude-to-glm
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 

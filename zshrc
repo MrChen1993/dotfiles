@@ -17,11 +17,3 @@ zstyle ':omz:update' frequency 30
 
 source $ZSH/oh-my-zsh.sh
 source ~/.customerc
-
-# pnpm
-export PNPM_HOME="/Users/chenlong/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
