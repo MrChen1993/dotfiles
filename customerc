@@ -25,18 +25,6 @@ eval $(gdircolors ~/local/opensource/dircolors-solarized/dircolors.ansi-dark)
 alias ping="ping -c 5"
 alias tree="tree -N"
 
-#MacOS专用脚本
-#Setting for Java
-export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
-export JAVA_17_HOME=`/usr/libexec/java_home -v 17`
-export JAVA_25_HOME=`/usr/libexec/java_home -v 25`
-export JAVA_26_HOME=`/usr/libexec/java_home -v 26`
-
-export JAVA_HOME=$JAVA_25_HOME
-alias jdk8="export JAVA_HOME=${JAVA_8_HOME}"
-alias jdk17="export JAVA_HOME=${JAVA_17_HOME}"
-alias jdk25="export JAVA_HOME=${JAVA_25_HOME}"
-alias jdk26="export JAVA_HOME=${JAVA_26_HOME}"
 
 export PATH=$PATH:/usr/local/sbin
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
@@ -80,9 +68,6 @@ unproxy() {
   echo "Proxy disabled"
 }
 
-# Maven
-export MAVEN_HOME=/Users/chenlong/local/maven-latest
-export PATH=$MAVEN_HOME/bin:$PATH
 
 export PNPM_HOME="/Users/chenlong/Library/pnpm"
 case ":$PATH:" in
