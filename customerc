@@ -75,5 +75,16 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
-source ~/.customerc.local
+# 定义重写逻辑的函数
+rewrite-claude-to-glm() {
+    # 使用 Zsh 的参数扩展功能进行全局替换
+    # $BUFFER 代表当前命令行输入的内容
+    BUFFER="${BUFFER//claude-sonnet-4-6/glm-5}"
+
+    # 执行原生的 accept-line 操作（即确认执行命令）
+    zle .accept-line
+}
+
+# 将该函数注册为一个 ZLE 小部件 (Widget)
+zle -N accept-line rewrite-claude-to-glm
 
