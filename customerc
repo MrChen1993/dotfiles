@@ -83,3 +83,7 @@ alias jdk17="export JAVA_HOME=${JAVA_17_HOME}"
 alias jdk25="export JAVA_HOME=${JAVA_25_HOME}"
 alias jdk26="export JAVA_HOME=${JAVA_26_HOME}"
 
+# Maven
+export MAVEN_HOME=/Users/chenlong/local/maven-latest
+export PATH=$MAVEN_HOME/bin:$PATH
+
