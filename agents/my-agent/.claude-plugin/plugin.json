@@ -1,0 +1,8 @@
+{
+  "name": "agent-plugins",
+  "version": "0.1.0",
+  "description": "个人工具集插件：auto-fix / myreview / group-change / teach 等 skills + investor 辩论 agents + debate 命令。",
+  "author": {
+    "name": "陈龙"
+  }
+}
